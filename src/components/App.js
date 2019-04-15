@@ -17,7 +17,7 @@ class App extends React.Component {
         const { params } = this.props.match;
         // first reinstate our localStorage
         const localStorageRef= localStorage.getItem(params.storeId);
-        console.log(localStorageRef);
+        //console.log(localStorageRef);
         if(localStorageRef) {
             this.setState({ order: JSON.parse(localStorageRef )});
         }
@@ -28,7 +28,7 @@ class App extends React.Component {
     }
 
     componentDidUpdate() {
-        console.log(this.state.order);
+        //console.log(this.state.order);
         localStorage.setItem(this.props.match.params.storeId, JSON.stringify(this.state.order));
     }
 
@@ -47,6 +47,15 @@ class App extends React.Component {
             fishes: fishes  //(fishes)
         });
     };
+
+    updateFish = (key, updatedFish) => {
+        //take a copy of the current state
+        const fishes = { ...this.state.fishes };
+        //update that state
+        fishes[key] = updatedFish;
+        //set that to state
+        this.setState({ fishes: fishes});
+    }
 
     addToOrder = (key) => {
         //take a copy of state
@@ -84,7 +93,8 @@ class App extends React.Component {
                 </div>
                 <Order fishes={this.state.fishes} order={this.state.order} />
                 <Inventory 
-                    addFish={this.addFish} 
+                    addFish={this.addFish}
+                    updateFish={this.updateFish} 
                     loadSampleFishes={this.loadSampleFishes}
                     fishes={this.state.fishes}
                 />    
