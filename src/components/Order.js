@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatPrice } from '../helpers';
 
 class Order extends React.Component {
     render() {
@@ -18,7 +19,7 @@ class Order extends React.Component {
                 <h2>Order</h2>
                 {orderIds}
                 <div className="total">
-                    <strong>{total}</strong>
+                    <strong>{totalPrice(total)}</strong>
                 </div>
             </div>
         );
