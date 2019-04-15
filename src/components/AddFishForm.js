@@ -9,7 +9,7 @@ class AddFishForm extends React.Component {
                 <input name="status" type="text" placeholder="Status" />
                 <input name="desc" type="text" placeholder="Desc" />
                 <input name="image" type="text" placeholder="Image" />
-                <button type="submit"> + add Fish</button>
+                <button type="submit"> + Add Fish</button>
             </form>       
         );
     }
