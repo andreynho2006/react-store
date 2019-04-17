@@ -1,5 +1,88 @@
 import React from 'react';
+import styled from 'styled-components';
+import { Button, Form, Input, Textarea, Select, Option } from './Styled-components';
 import PropTypes from 'prop-types';
+
+const AddFishButton = styled(Button)`
+    with: 100%;
+    border: 0;
+`;
+const AddEditForm = styled(Form)`
+    margin:0 0 20px 0;
+    padding:0;
+    width: 100%;
+    max-width: 523px;
+    border: 2px solid #000;
+    overflow: hidden;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+`;
+const InputForm = styled(Input)`
+    width: 33.33%;
+    padding: 10px;
+    line-height: 1;
+    font-size: 1.2rem;
+    border: 0;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+            appearance: none;
+    border-radius: 0;
+    background: #fff;
+
+    :focus {
+        outline: 0;
+        background: #fef2de;
+    }
+`;
+const InputImage = styled(InputForm)`
+    width: 100%;
+
+    :focus {
+        outline: 0;
+        background: #fef2de;
+    }
+`;
+const TextareForm = styled(Textarea)`
+    width: 100%%;
+    padding: 10px;
+    line-height: 1;
+    font-size: 1.2rem;
+    border: 0;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+            appearance: none;
+    border-radius: 0;
+    background: #fff;
+
+    :focus {
+        outline: 0;
+        background: #fef2de;
+    }
+`;
+const SelectForm = styled(Select)`
+    width: 33.33%;
+    padding: 10px;
+    line-height: 1;
+    font-size: 1.2rem;
+    border: 0;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+            appearance: none;
+    border-radius: 0;
+    background: #fff;
+
+    :focus {
+        outline: 0;
+        background: #fef2de;
+    }
+`;
 
 class AddFishForm extends React.Component {
     nameRef= React.createRef();
@@ -28,17 +111,17 @@ class AddFishForm extends React.Component {
     }
     render() {
         return (
-            <form className="fish-edit" onSubmit={this.createFish}>
-                <input name="name" ref={this.nameRef} type="text" placeholder="Name" />
-                <input name="price" ref={this.priceRef} type="text" placeholder="Price" />
-                <select name="status" ref={this.statusRef}>
-                    <option value="available">Fresh!</option>
-                    <option value="unavailable">Sold out</option>
-                </select>
-                <textarea name="desc" ref={this.descRef} type="text" placeholder="Desc" />
-                <input name="image" ref={this.imageRef} type="text" placeholder="Image" />
-                <button type="submit"> + Add Fish</button>
-            </form>       
+            <AddEditForm onSubmit={this.createFish}>
+                <InputForm name="name" ref={this.nameRef} type="text" placeholder="Name" />
+                <InputForm name="price" ref={this.priceRef} type="text" placeholder="Price" />
+                <SelectForm name="status" ref={this.statusRef}>
+                    <Option value="available">Fresh!</Option>
+                    <Option value="unavailable">Sold out</Option>
+                </SelectForm>
+                <TextareForm name="desc" ref={this.descRef} type="text" placeholder="Desc" />
+                <InputImage name="image" ref={this.imageRef} type="text" placeholder="Image" />
+                <AddFishButton type="submit"> + Add Fish</AddFishButton>
+            </AddEditForm>       
         );
     }
 }

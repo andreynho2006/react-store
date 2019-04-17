@@ -26,5 +26,13 @@ const Form = styled.form`
 const Input = styled.input`
     width: 100%;
     `;
-
-export { Button, Form, Input };
+const Textarea = styled.textarea`
+    width: 100%;
+    `;
+const Select = styled.select`
+    width: 100%;
+    `;
+const Option = styled.option`
+    width: 100%;
+    `;
+export { Button, Form, Input, Textarea, Select, Option };

@@ -2,9 +2,25 @@ import React from 'react';
 import AddFishForm from './AddFishForm';
 import EditFishForm from './EditFishForm';
 import Login from './Login';
+import styled from 'styled-components';
+import { Button } from './Styled-components';
 import PropTypes from 'prop-types';
 import base, { firebaseApp } from '../base';
 import firebase from 'firebase';
+
+const LogoutButton = styled(Button)`
+    width: 25%;
+    margin-bottom: 20px;
+`;
+
+const LoadSampleButton = styled(Button)`
+    width: 50%;
+    padding: 25px;
+`;
+
+const AddFishButton = styled(Button)`
+    padding: 10px;
+`;
 
 class Inventory extends React.Component {
     static propTypes = {
@@ -56,7 +72,7 @@ class Inventory extends React.Component {
     }
 
     render() {
-        const logout = <button onClick={this.logout}>Log Out</button>
+        const logout = <LogoutButton onClick={this.logout}>Log Out</LogoutButton>
         //check if they are log in
         if(!this.state.uid) {
             return <Login authenticate={this.authenticate} />
@@ -87,7 +103,7 @@ class Inventory extends React.Component {
                     />
                 ))}
                 <AddFishForm addFish={this.props.addFish}/>
-                <button onClick={this.props.loadSampleFishes}>Load Sample Fishes</button>
+                <LoadSampleButton onClick={this.props.loadSampleFishes}>Load Sample Fishes</LoadSampleButton>
             </div>           
         );
     }
