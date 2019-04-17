@@ -1,7 +1,7 @@
 import React from 'react';
 import { formatPrice } from '../helpers';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { H2 } from './Styled-components';
+import { H2, Div } from './Styled-components';
 import PropTypes from 'prop-types';
 
 class Order extends React.Component {
@@ -62,15 +62,15 @@ class Order extends React.Component {
         }, 0);
 
         return (
-            <div className="order-wrap">
+            <Div className="order-wrap">
                 <H2>Order</H2>
                 <TransitionGroup component="ul" className="order">
                     {orderIds.map(this.renderOrder)}
                 </TransitionGroup>
-                <div className="total">
+                <Div className="total">
                     <strong>Total:{formatPrice(total)}</strong>
-                </div>
-            </div>
+                </Div>
+            </Div>
         );
     }
 }

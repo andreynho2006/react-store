@@ -16,7 +16,7 @@ const Button = styled.button`
 
     .logoutButton {
         width: 25%;
-        margin-bottom: 20px;
+        margin-bottom: 20px!important;
     }
 
     .loadSampleButton {
@@ -32,7 +32,7 @@ const Button = styled.button`
         color: #fff;
         padding: 2rem;
         background: #82d465;
-    }
+    };
 
     .twitter {
         border: 0;
@@ -53,6 +53,11 @@ const Button = styled.button`
         padding: 2rem;
         background: #3864a3;
     }
+
+    .addFishButton {
+        with: 100%;
+        border: 0;
+    }
     `;
 
 const Form = styled.form`
@@ -61,6 +66,18 @@ const Form = styled.form`
     margin: 50px auto;
     padding: 2rem;
     border: 2px solid #000;
+
+    .addEditForm {
+        margin:0 0 20px 0;
+        padding:0;
+        width: 100%;
+        max-width: 523px;
+        border: 2px solid #000;
+        overflow: hidden;
+        display: -webkit-box;
+        display: flex;
+        flex-wrap: wrap;
+    }
     `;
 
 const Input = styled.input`
@@ -81,4 +98,10 @@ const Div = styled.div`
 const H2 = styled.h2`
     font-weight: bold;
 `;
-export { Button, Form, Input, Textarea, Select, Option, H2 };
+const Nav = styled.nav`
+    display: block;
+`;
+const P = styled.p`
+    display: block;
+`;
+export { Button, Form, Input, Textarea, Select, Option, H2, Nav, P, Div };

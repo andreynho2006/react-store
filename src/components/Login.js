@@ -1,13 +1,13 @@
 import React from 'react';
-import { Button, H2 } from './Styled-components';
+import { Button, H2, Nav, P } from './Styled-components';
 import PropTypes from 'prop-types';
 
 
 
 const Login = (props) => (
-    <nav className="login">
+    <Nav className="login">
         <H2>Inventory Login</H2>
-        <p>Sign in to manage your store's inventory.</p>
+        <P>Sign in to manage your store's inventory.</P>
         <Button 
             className="github"
             onClick={() => props.authenticate("Github")}
@@ -26,7 +26,7 @@ const Login = (props) => (
         >
             Log in With Facebook
         </Button>
-    </nav>
+    </Nav>
 );
 
 Login.propTypes = {

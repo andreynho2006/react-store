@@ -3,21 +3,11 @@ import styled from 'styled-components';
 import { Button, Form, Input, Textarea, Select, Option } from './Styled-components';
 import PropTypes from 'prop-types';
 
+
 const AddFishButton = styled(Button)`
-    with: 100%;
-    border: 0;
+    padding: 20px;
 `;
-const AddEditForm = styled(Form)`
-    margin:0 0 20px 0;
-    padding:0;
-    width: 100%;
-    max-width: 523px;
-    border: 2px solid #000;
-    overflow: hidden;
-    display: -webkit-box;
-    display: flex;
-    flex-wrap: wrap;
-`;
+
 const InputForm = styled(Input)`
     width: 33.33%;
     padding: 10px;
@@ -111,7 +101,7 @@ class AddFishForm extends React.Component {
     }
     render() {
         return (
-            <AddEditForm onSubmit={this.createFish}>
+            <Form className="addEditForm" onSubmit={this.createFish}>
                 <InputForm name="name" ref={this.nameRef} type="text" placeholder="Name" />
                 <InputForm name="price" ref={this.priceRef} type="text" placeholder="Price" />
                 <SelectForm name="status" ref={this.statusRef}>
@@ -120,8 +110,8 @@ class AddFishForm extends React.Component {
                 </SelectForm>
                 <TextareForm name="desc" ref={this.descRef} type="text" placeholder="Desc" />
                 <InputImage name="image" ref={this.imageRef} type="text" placeholder="Image" />
-                <AddFishButton type="submit"> + Add Fish</AddFishButton>
-            </AddEditForm>       
+                <AddFishButton className="addFishButton" type="submit"> + Add Fish</AddFishButton>
+            </Form>       
         );
     }
 }
