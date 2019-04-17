@@ -13,6 +13,46 @@ const Button = styled.button`
     position: relative;
     z-index: 2;
     width: 100%;
+
+    .logoutButton {
+        width: 25%;
+        margin-bottom: 20px;
+    }
+
+    .loadSampleButton {
+        width: 50%;
+        padding: 25px;
+    }
+
+    .github {
+        border: 0;
+        display: block;
+        margin-bottom: 2rem;
+        width: 100%;
+        color: #fff;
+        padding: 2rem;
+        background: #82d465;
+    }
+
+    .twitter {
+        border: 0;
+        display: block;
+        margin-bottom: 2rem;
+        width: 100%;
+        color: #fff;
+        padding: 2rem;
+        background: #5cc437;
+    }
+
+    .facebook {
+        border: 0;
+        display: block;
+        margin-bottom: 2rem;
+        width: 100%;
+        color: #fff;
+        padding: 2rem;
+        background: #3864a3;
+    }
     `;
 
 const Form = styled.form`
@@ -35,4 +75,10 @@ const Select = styled.select`
 const Option = styled.option`
     width: 100%;
     `;
-export { Button, Form, Input, Textarea, Select, Option };
+const Div = styled.div`
+    width: 100%;
+    `;
+const H2 = styled.h2`
+    font-weight: bold;
+`;
+export { Button, Form, Input, Textarea, Select, Option, H2 };

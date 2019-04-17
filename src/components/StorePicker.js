@@ -1,8 +1,7 @@
 import React from 'react';
 import { getFunName } from '../helpers';
 import PropTypes from 'prop-types';
-import { Button, Form, Input } from './Styled-components';
-
+import { Button, Form, Input, H2 } from './Styled-components';
 
 class StorePicker extends React.Component {
     myInput = React.createRef();
@@ -24,7 +23,7 @@ class StorePicker extends React.Component {
     render() {
         return(
             <Form action="" onSubmit={this.goToStore}>
-                <h2>Plase enter a store</h2>
+                <H2>Plase enter a store</H2>
                 { /* comment */ }
                 <Input  
                     type="text" 

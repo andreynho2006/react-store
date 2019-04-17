@@ -8,20 +8,6 @@ import PropTypes from 'prop-types';
 import base, { firebaseApp } from '../base';
 import firebase from 'firebase';
 
-const LogoutButton = styled(Button)`
-    width: 25%;
-    margin-bottom: 20px;
-`;
-
-const LoadSampleButton = styled(Button)`
-    width: 50%;
-    padding: 25px;
-`;
-
-const AddFishButton = styled(Button)`
-    padding: 10px;
-`;
-
 class Inventory extends React.Component {
     static propTypes = {
         fishes: PropTypes.object,
@@ -72,7 +58,7 @@ class Inventory extends React.Component {
     }
 
     render() {
-        const logout = <LogoutButton onClick={this.logout}>Log Out</LogoutButton>
+        const logout = <Button className="logoutButton" onClick={this.logout}>Log Out</Button>
         //check if they are log in
         if(!this.state.uid) {
             return <Login authenticate={this.authenticate} />
@@ -103,7 +89,7 @@ class Inventory extends React.Component {
                     />
                 ))}
                 <AddFishForm addFish={this.props.addFish}/>
-                <LoadSampleButton onClick={this.props.loadSampleFishes}>Load Sample Fishes</LoadSampleButton>
+                <Button className="loadSampleButton" onClick={this.props.loadSampleFishes}>Load Sample Fishes</Button>
             </div>           
         );
     }

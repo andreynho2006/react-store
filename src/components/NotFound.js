@@ -1,8 +1,9 @@
 import React from 'react';
+import { H2 } from './Styled-components';
 
 const NotFound = () => (
     <div>
-        <h2>Not found!!!!!!</h2>
+        <H2>Not found!!!!!!</H2>
     </div>
 );
 

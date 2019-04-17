@@ -1,6 +1,7 @@
 import React from 'react';
 import { formatPrice } from '../helpers';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { H2 } from './Styled-components';
 import PropTypes from 'prop-types';
 
 class Order extends React.Component {
@@ -62,7 +63,7 @@ class Order extends React.Component {
 
         return (
             <div className="order-wrap">
-                <h2>Order</h2>
+                <H2>Order</H2>
                 <TransitionGroup component="ul" className="order">
                     {orderIds.map(this.renderOrder)}
                 </TransitionGroup>
