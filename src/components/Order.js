@@ -1,8 +1,14 @@
 import React from 'react';
 import { formatPrice } from '../helpers';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { H2, Div } from './Styled-components';
+import styled from 'styled-components';
+import { H2, Div, List, Button, Span, Strong } from './Styled-components';
 import PropTypes from 'prop-types';
+
+const ButtonRemoveFish = styled(Button)`
+    float: right;
+    width: 20px;
+`;
 
 class Order extends React.Component {
     static propTypes ={
@@ -23,9 +29,9 @@ class Order extends React.Component {
                     classNames="order" 
                     key={key} 
                     timeout={{ enter: 500, exit: 500 }}>
-                    <li key={key}>
+                    <List key={key}>
                         Sorry {fish ? fish.name : 'fish'} is no longer available
-                    </li>
+                    </List>
                 </CSSTransition>
             );
         }
@@ -34,18 +40,18 @@ class Order extends React.Component {
             classNames="order" 
             key={key} 
             timeout={{ enter: 250, exit: 250 }}>
-                <li key={key}>
-                <span>
+                <List key={key}>
+                <Span>
                     <TransitionGroup component="span" className="count">
                         <CSSTransition classNames="count" key={count} timeout={{ enter: 500, exit: 500 }}>
-                            <span>{count}</span>
+                            <Span>{count}</Span>
                         </CSSTransition>
                     </TransitionGroup>
                         lbs {fish.name}
                         {formatPrice(fish.price)}
-                        <button onClick={() => this.props.removeFromOrder(key)}>&times;</button>
-                    </span>
-                </li>
+                        <ButtonRemoveFish onClick={() => this.props.removeFromOrder(key)}>&times;</ButtonRemoveFish>
+                    </Span>
+                </List>
         </CSSTransition>
         );    
     }
@@ -68,7 +74,7 @@ class Order extends React.Component {
                     {orderIds.map(this.renderOrder)}
                 </TransitionGroup>
                 <Div className="total">
-                    <strong>Total:{formatPrice(total)}</strong>
+                    <Strong>Total:{formatPrice(total)}</Strong>
                 </Div>
             </Div>
         );

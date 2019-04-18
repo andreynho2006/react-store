@@ -3,7 +3,7 @@ import AddFishForm from './AddFishForm';
 import EditFishForm from './EditFishForm';
 import Login from './Login';
 import styled from 'styled-components';
-import { Button } from './Styled-components';
+import { Button, Div, H2, P } from './Styled-components';
 import PropTypes from 'prop-types';
 import base, { firebaseApp } from '../base';
 import firebase from 'firebase';
@@ -77,17 +77,17 @@ class Inventory extends React.Component {
         // check if they are not the owner of the store
         if(this.state.uid !== this.state.owner) {
             return (
-                <div>
-                    <p>Sorry you are not the owner!!</p>
+                <Div>
+                    <P>Sorry you are not the owner!!</P>
                     {logout}
-                </div>    
+                </Div>    
             )
         } 
 
         // They must be the owner, render the inventory
         return (
-            <div className="inventory">
-                <h2>Inventory</h2>
+            <Div>
+                <H2>Inventory</H2>
                 {logout}
                 {Object.keys(this.props.fishes).map(key => (
                     <EditFishForm 
@@ -100,7 +100,7 @@ class Inventory extends React.Component {
                 ))}
                 <AddFishForm addFish={this.props.addFish}/>
                 <LoadSampleButton onClick={this.props.loadSampleFishes}>Load Sample Fishes</LoadSampleButton>
-            </div>           
+            </Div>           
         );
     }
 }

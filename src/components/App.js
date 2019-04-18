@@ -4,6 +4,8 @@ import Order from './Order';
 import Inventory from './Inventory';
 import Fish from './Fish';
 import sampleFishes from '../sample-fishes';
+import styled from 'styled-components';
+import { Div, UnorderedList } from './Styled-components';
 import base from '../base';
 import PropTypes from 'prop-types';
 
@@ -100,10 +102,10 @@ class App extends React.Component {
 
     render() {       
         return (
-            <div className="catch-of-the-day">
-                <div className="menu">
+            <Div className="catch-of-the-day">
+                <Div className="menu">
                     <Header tagline="Fresh Seafood Market"/>
-                    <ul className="fishes">
+                    <UnorderedList className="fishes">
                         {Object.keys(this.state.fishes).map(key => (
                             <Fish   
                                 key={key} 
@@ -112,8 +114,8 @@ class App extends React.Component {
                                 addToOrder={this.addToOrder}
                             />
                         ))}
-                    </ul>
-                </div>
+                    </UnorderedList>
+                </Div>
                 <Order 
                     fishes={this.state.fishes} 
                     order={this.state.order}
@@ -127,7 +129,7 @@ class App extends React.Component {
                     fishes={this.state.fishes}   
                     storeId={this.props.match.params.storeId}                
                 />    
-            </div>
+            </Div>
         );
     }
 }

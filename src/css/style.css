@@ -522,9 +522,10 @@ button[disabled],
 input[type=submit][disabled] {
   color: #d12028;
   background: #fff;
+  width: 20%;
   border-color: #d12028;
-  -webkit-transform: rotate(-10deg) scale(2) translateX(50%) translateY(-50%);
-          transform: rotate(-10deg) scale(2) translateX(50%) translateY(-50%);
+  -webkit-transform: rotate(-10deg) scale(2) translateX(10%) translateY(-50%);
+          transform: rotate(-10deg) scale(2) translateX(10%) translateY(-50%);
 }
 button[disabled]:hover,
 input[type=submit][disabled]:hover {

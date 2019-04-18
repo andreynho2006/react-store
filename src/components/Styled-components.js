@@ -58,7 +58,53 @@ const Button = styled.button`
         with: 100%;
         border: 0;
     }
-    `;
+
+    [disabled] {
+        color: #d12028;
+        background: #fff;
+        border-color: #d12028;
+        width: 20%;
+        -webkit-transform: rotate(-10deg) scale(2) translateX(50%) translateY(-50%);
+                transform: rotate(-10deg) scale(2) translateX(50%) translateY(-50%);
+    }
+    [disabled]:hover {
+        color: #d12028;
+        cursor: not-allowed;
+    }
+    [disabled]:after {
+        display: none;
+    }
+    :after {
+        content: '';
+        z-index: -1;
+        display: block;
+        background: #000;
+        position: absolute;
+        width: 100%;
+        height: 0;
+        left: 0;
+        top: 0;
+        -webkit-transition: all 0.2s;
+        transition: all 0.2s;
+    }
+    :hover {
+        color: #fff;
+         outline: 0;
+    }
+    :focus {
+        color: #fff;
+         outline: 0;
+    }
+    :hover:after {
+        height: 100%;
+    }
+    .warning:after {
+        background: #d12028;
+    }
+    .success::after {
+        background: #2dc22d;
+    }
+`;
 
 const Form = styled.form`
     background: #fff;
@@ -95,13 +141,88 @@ const Option = styled.option`
 const Div = styled.div`
     width: 100%;
     `;
+const H1 = styled.h1`
+    font-family: 'blanchcaps_inline', sans-serif;
+    text-align: center;
+    font-weight: normal;
+    margin: 0;
+`;
 const H2 = styled.h2`
-    font-weight: bold;
+    font-weight: normal;
+    font-family: 'haymakerregular', sans-serif;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+`;
+const H3 = styled.h3`
+    font-weight: normal;
+    font-family: 'haymakerregular', sans-serif;
+    font-size: 3rem;
+
+    .fish-name {
+        margin: 0;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+                align-items: center;
+    }
 `;
 const Nav = styled.nav`
     display: block;
 `;
 const P = styled.p`
     display: block;
+
+    .menu-fish {
+        margin: 0;
+        font-size: 1.8rem;
+    }
 `;
-export { Button, Form, Input, Textarea, Select, Option, H2, Nav, P, Div };
+const List = styled.li`
+    display: block;
+`;
+const Image = styled.img`
+    display: block;
+    .img-menu-fish {
+        float: left;
+        width: 150px;
+        margin-right: 1rem;
+    }
+`;
+const Span = styled.span`
+    display: block;
+
+    .tagline {
+        background: "#fff";
+        position: relative;
+        z-index: 2;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .ofThe, .of {
+        padding-right: 2rem;
+        position: relative;
+        right: -0.5rem;
+    }
+    
+    .price {
+        font-size: 1.4rem;
+        -webkit-box-pack: end;
+        justify-content: flex-end;
+    }
+    
+`;
+const Strong = styled.strong`
+    display: block;
+`;
+const HeaderTop = styled.header`
+    text-align: center;
+`;
+const UnorderedList = styled.ul`
+    text-align: center;
+`;
+
+export { Button, Form, Input, Textarea, Select, Option, H1, H2, H3, HeaderTop, Nav, P, Div, List, Span, Strong, Image, UnorderedList };

@@ -1,4 +1,6 @@
 import React from 'react';
+import styled from 'styled-components';
+import { List, H3, Button, Span, P, Image } from './Styled-components';
 import PropTypes from 'prop-types';
 import { formatPrice } from '../helpers';
 
@@ -22,20 +24,20 @@ class Fish extends React.Component {
         const status = this.props.details.status;
         const isAvailable = status === 'available';
         return (
-            <li className="menu-fish">
-                <img src={image} alt={name} />
-                <h3 className="fish-name">
+            <List className="menu-fish">
+                <Image className="img-menu-fish" src={image} alt={name} />
+                <H3 className="fish-name">
                     {name}
-                    <span className="price">{formatPrice(price)}</span>
-                </h3>
-                <p>{desc}</p>
-                <button 
+                    <Span className="price">{formatPrice(price)}</Span>
+                </H3>
+                <P>{desc}</P>
+                <Button
                     disabled={!isAvailable} 
                     onClick={() =>
                     this.props.addToOrder(this.props.index)}
                 >
-                    {isAvailable ? "Add to order" : "Sold out"}</button>
-            </li>          
+                    {isAvailable ? "Add to order" : "Sold out"}</Button>
+            </List>          
         );
     }
 }
